@@ -28,11 +28,11 @@ def encode(img, watermark):
             (img_r, img_g, img_b, img_a) = img_bitmap.getpixel((x, y))
             watermark_x = x % watermark_w
             watermark_y = y % watermark_h
-            bit = watermark_bitmap.getpixel((watermark_x, watermark_y))
-            img_r = set_bit(img_r, 0, 1 if bit else  0)
-            img_g = set_bit(img_g, 0, 1 if bit else  0)
-            img_b = set_bit(img_b, 0, 1 if bit else  0)
-            img_a = set_bit(img_a, 0, 1 if bit else  0)
+            bit = 1 if watermark_bitmap.getpixel((watermark_x, watermark_y)) else 0
+            img_r = set_bit(img_r, 0, bit)
+            img_g = set_bit(img_g, 0, bit)
+            img_b = set_bit(img_b, 0, bit)
+            img_a = set_bit(img_a, 0, bit)
             img_out_bitmap.putpixel((x, y), (img_r, img_g, img_b, img_a))
     return img_out
 
