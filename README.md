@@ -1,19 +1,19 @@
 
-# What is image proguard
-Image proguard is a tool for digitally watermarking images
+## What is image protector
+Image protector is a tool for digitally watermarking images, the principle is LSB algorithm.
 
-# origin image
+## origin image
 
 ![origin image](https://github.com/ChanJLee/image-proguard/blob/master/tiger-1526704_1280.png)
 
-# output image
+## output image
 
 ![output image](https://github.com/ChanJLee/image-proguard/blob/master/png_out.png)
 
-# View in PS (command + M in Mac OsX)
+## View in PS (command + M in Mac OsX)
 ![in ps](https://github.com/ChanJLee/image-proguard/blob/master/WX20180322-230004@2x.png)
 
-# HOW TO USE
+## HOW TO USE
 
 1. Prepare a binary image
 
