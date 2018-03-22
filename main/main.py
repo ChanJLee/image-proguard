@@ -1,4 +1,5 @@
 # coding=utf-8
+import StringIO
 from collections import Iterable
 
 import io
@@ -48,10 +49,10 @@ def encode(img, watermark):
 
 if __name__ == '__main__':
     # test png
-    img = Image.open("../tiger-1526704_1280.png")
-    watermark = Image.open("../watermark.png")
-    out = encode(img, watermark)
-    out.save("../png_out.png", img.format)
+    # img = Image.open("../tiger-1526704_1280.png")
+    # watermark = Image.open("../watermark.png")
+    # out = encode(img, watermark)
+    # out.save("../png_out.png", img.format)
 
     ## test jpg
     # img = Image.open("../F100011059.jpg")
@@ -69,7 +70,13 @@ if __name__ == '__main__':
     # file.write(b.getvalue())
     # file.close()
 
-    ## test from bytes
+    ## test from bytes 1
     # img = Image.open("../F100011059.jpg")
     # temp = Image.frombytes(img.mode, img.size, img.tobytes())
     # temp.show()
+
+    ## test from bytes 2
+    with open('../F100011059.jpg', 'rb') as content_file:
+        content = content_file.read()
+        img = Image.open(StringIO.StringIO(content))
+        img.show()
