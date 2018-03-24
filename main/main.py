@@ -16,7 +16,7 @@ def set_bit(n, i, x):
 
 
 # image object, see https://pillow.readthedocs.io/en/3.1.x/reference/Image.html
-# payload object
+# watermark object
 def encode(img, watermark):
     (img_w, img_h) = img.size
     (watermark_w, watermark_h) = watermark.size
