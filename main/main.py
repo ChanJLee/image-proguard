@@ -21,6 +21,7 @@ def encode(img, watermark):
     (img_w, img_h) = img.size
     (watermark_w, watermark_h) = watermark.size
 
+    ## 检查水印是不是二值图片(只有黑白两种颜色的图片)
     if not cmp(watermark.mode, 'P') and not cmp(watermark.mode, 'L'):
         raise RuntimeError("invalid argument, watermark must be a binary image")
 
@@ -31,9 +32,13 @@ def encode(img, watermark):
     img_out_bitmap = img_out.getdata()
 
     print "start write"
+    # 遍历原图中的每一个像素
+    print "start write"
     for x in range(img_w):
         for y in range(img_h):
             pixel = img_bitmap.getpixel((x, y))
+            
+            # 读取水印
             watermark_x = x % watermark_w
             watermark_y = y % watermark_h
             bit = 1 if watermark_bitmap.getpixel((watermark_x, watermark_y)) else 0
